@@ -1,20 +1,12 @@
 import dotenv from 'dotenv';
+
+import IDatabaseConfig from './interfaces/databaseInterface';
+import IAuthConfig from './interfaces/authInterface';
 dotenv.config();
 
-interface IDatabaseConfig {
-    name: string;
-    password: string;
-    username: string;
-    host: string;
-    port: number;
-    dialect: string;
-}
-interface IAuthConfig {
-    jwt_secret: string;
-}
 
 export const databaseConfig: IDatabaseConfig = {
-    name: process.env.DATABASE_NAME || "kortobaa",
+    name: process.env.DATABASE_NAME || "my_database",
     password: process.env.DATABASE_PASSWORD || "",
     username: process.env.DATABASE_USERNAME || "root",
     host: process.env.DATABASE_HOST || "localhost",
